@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY PATH - The Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <h1>MY PATH: A Journey Through Pain, Power, and Purpose</h1>
+  <div id="narrative">Loading game...</div>
+  <div id="choices"></div>
+  <div id="stats"></div>
+
+  <script src="story_hub.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('[ServiceWorker] Registered:', reg))
+          .catch(err => console.error('[ServiceWorker] Error:', err));
+      });
+    }
+  </script>
+</body>
+</html>
