@@ -1,28 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darryl's Path</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+    <meta charset="UTF-8">
+    <title>Path of Fire: Legacy Protocol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="game.js"></script>
 </head>
 <body>
-  <h1>MY PATH: A Journey Through Pain, Power, and Purpose</h1>
-  <div id="narrative">Loading game...</div>
-  <div id="choices"></div>
-  <div id="stats"></div>
-
-  <script src="story_hub.js"></script>
-  <script>
-    // Register service worker for offline support
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js') // Use relative path for local projects
-          .then(reg => console.log('[ServiceWorker] Registered:', reg))
-          .catch(err => console.error('[ServiceWorker] Error:', err));
-      });
-    }
-  </script>
+    <main>
+        <h1>🔥 Path of Fire: Legacy Protocol</h1>
+        <p id="narrative">Welcome to your legacy. Every choice echoes across generations.</p>
+        <div id="choices"></div>
+    </main>
 </body>
 </html>

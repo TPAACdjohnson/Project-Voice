@@ -1,15 +1,10 @@
+
 {
-  "name": "MY PATH - Interactive Journey",
-  "short_name": "MY PATH",
-  "start_url": "./index.html",
+  "name": "Path of Fire: Legacy Protocol",
+  "short_name": "PathOfFire",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#0f2027",
-  "theme_color": "#4CAF50",
-  "icons": [
-    {
-      "src": "icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ]
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": []
 }
