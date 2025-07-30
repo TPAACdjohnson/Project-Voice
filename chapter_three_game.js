@@ -2,10 +2,13 @@ function mergeGameState(state) {
     const narrative = document.getElementById("narrative");
     const choices = document.getElementById("choices");
 
+    // Set the chapter narrative
     narrative.textContent = "📍 The Navy — Alone in a crowd, you step into the spiritual fire. Far from home, far from self. Rebirth begins in isolation.";
 
+    // Clear previous choices
     choices.innerHTML = "";
 
+    // Define possible decisions
     const decisions = [
         {
             text: "Study and test into Air Traffic Control",
@@ -29,14 +32,22 @@ function mergeGameState(state) {
         }
     ];
 
-    decisions.forEach(decision => {
+    // Helper to create a choice button
+    function createChoiceButton(decision) {
         const btn = document.createElement("button");
         btn.textContent = decision.text;
         btn.onclick = () => {
+            // Disable all buttons to prevent multiple selections
+            Array.from(choices.children).forEach(child => child.disabled = true);
             updateGameState(decision.impact);
             showChapterThreeConclusion();
         };
-        choices.appendChild(btn);
+        return btn;
+    }
+
+    // Render all decision buttons
+    decisions.forEach(decision => {
+        choices.appendChild(createChoiceButton(decision));
     });
 }
 

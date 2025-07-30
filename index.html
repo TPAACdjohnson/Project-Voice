@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MY PATH - The Game</title>
+  <title>Darryl's Path</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
@@ -15,9 +15,10 @@
 
   <script src="story_hub.js"></script>
   <script>
+    // Register service worker for offline support
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js')
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js') // Use relative path for local projects
           .then(reg => console.log('[ServiceWorker] Registered:', reg))
           .catch(err => console.error('[ServiceWorker] Error:', err));
       });

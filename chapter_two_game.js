@@ -2,10 +2,13 @@ function mergeGameState(state) {
     const narrative = document.getElementById("narrative");
     const choices = document.getElementById("choices");
 
+    // Set the chapter narrative
     narrative.textContent = "📍 Georgia — Your mom transfers to Alpharetta PD, becomes the first Black female sergeant. But no one cares. You're raising yourself now.";
 
+    // Clear previous choices
     choices.innerHTML = "";
 
+    // Define possible decisions
     const decisions = [
         {
             text: "Cook, clean, become the rock",
@@ -29,14 +32,22 @@ function mergeGameState(state) {
         }
     ];
 
-    decisions.forEach(decision => {
+    // Helper to create a choice button
+    function createChoiceButton(decision) {
         const btn = document.createElement("button");
         btn.textContent = decision.text;
         btn.onclick = () => {
+            // Disable all buttons to prevent multiple selections
+            Array.from(choices.children).forEach(child => child.disabled = true);
             updateGameState(decision.impact);
             showChapterTwoConclusion();
         };
-        choices.appendChild(btn);
+        return btn;
+    }
+
+    // Render all decision buttons
+    decisions.forEach(decision => {
+        choices.appendChild(createChoiceButton(decision));
     });
 }
 
